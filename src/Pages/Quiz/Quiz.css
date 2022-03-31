@@ -128,3 +128,43 @@
   color: var(--black-color);
   cursor: not-allowed;
 }
+
+/****** mobile version  *****/
+
+@media only screen and (max-width: 800px) {
+  .quiz-container {
+    height: 80vh;
+    width: 95%;
+  }
+  .bg-image {
+    position: absolute;
+    top: 0;
+    min-height: 93vh;
+    width: 98.9vw;
+    z-index: 0;
+    overflow: hidden;
+    object-fit: fill;
+  }
+  .question-heading {
+    font-size: 1.4rem;
+  }
+
+  .btn-container {
+    font-size: 1.2rem;
+  }
+
+  .btn-container li {
+    width: 90%;
+  }
+  .btn-options {
+    font-size: 1rem;
+  }
+  .show-results {
+    width: 85%;
+  }
+  .btn-quit,
+  .btn-next {
+    margin-top: 1rem;
+    padding: 5px 3rem;
+  }
+}
