@@ -9,9 +9,9 @@ export default function Rules() {
 
   return (
     <div className="rules-container">
-      <h1 className="rules-heading">QUIZ RULES</h1>
       {submitted ? (
         <div className="rules ">
+          <h1 className="rules-heading">QUIZ RULES</h1>
           <p>1. You will be presented with a set of 10 questions.</p>
           <p>2. Each question will have multiple choice.</p>
           <p>3. Each question has only one single answer.</p>
