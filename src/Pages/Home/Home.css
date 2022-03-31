@@ -1,0 +1,54 @@
+.home-container {
+  padding-top: 10vh;
+  min-height: 150vh;
+  width: 98.9vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgb(255, 252, 234);
+}
+
+.welcome-heading {
+  font-size: 2rem;
+}
+
+.img-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.cover-img {
+  box-shadow: 3px 3px 3px blue;
+  border: 2px solid black;
+}
+
+.welcome-msg {
+  font-size: 1.5rem;
+  color: red;
+}
+
+.welcome-question {
+  position: absolute;
+  font-size: 2rem;
+  top: 40%;
+  left: 8%;
+  color: white;
+  -webkit-text-stroke: 2px blue;
+}
+
+/****** mobile version  *****/
+
+@media only screen and (max-width: 800px) {
+  .home-container {
+    min-height: 220vh;
+  }
+  .cover-img {
+    width: 90%;
+  }
+  .welcome-question {
+    top: 20%;
+    left: 8%;
+  }
+}
