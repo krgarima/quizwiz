@@ -1,0 +1,69 @@
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80vw;
+  flex-wrap: wrap;
+}
+
+.card {
+  min-height: 40vh;
+  width: 15.8rem;
+  border: 4px solid black;
+  background-color: white;
+  border-radius: 8px;
+
+  font-size: 1rem;
+  object-fit: cover;
+}
+
+.card:hover {
+  box-shadow: 3px 3px 3px darkgray;
+}
+
+.card-img {
+  width: 15.3rem;
+  height: 22vh;
+}
+
+.description {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.heading-container {
+  padding: 5px 0;
+  position: relative;
+}
+
+.heading {
+  position: absolute;
+  color: white;
+  top: -6rem;
+  left: 5rem;
+}
+
+.btn-playNow {
+  padding: 8px 1.8rem;
+  background-color: blue;
+  margin: 0 0 0.6rem 4rem;
+  border-radius: 1.5rem;
+  border: none;
+}
+
+.btn-playNow a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-playNow:hover {
+  background-color: darkblue;
+}
+
+/****** mobile version  *****/
+
+@media only screen and (max-width: 800px) {
+  .card {
+    margin-top: 3rem;
+  }
+}

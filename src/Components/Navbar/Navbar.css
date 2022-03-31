@@ -1,0 +1,12 @@
+.navbar {
+  height: 10vh;
+  width: 100vw;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  font-size: 1.3rem;
+  z-index: 10;
+  border-bottom: 1px solid blue;
+}
