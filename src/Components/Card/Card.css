@@ -8,8 +8,8 @@
 .card {
   min-height: 40vh;
   width: 15.8rem;
-  border: 4px solid black;
-  background-color: white;
+  border: 4px solid var(--black-color);
+  background-color: var(--white-color);
   border-radius: 8px;
 
   font-size: 1rem;
@@ -17,7 +17,7 @@
 }
 
 .card:hover {
-  box-shadow: 3px 3px 3px darkgray;
+  box-shadow: 3px 3px 3px var(--darkGray-color);
 }
 
 .card-img {
@@ -38,14 +38,14 @@
 
 .heading {
   position: absolute;
-  color: white;
+  color: var(--white-color);
   top: -6rem;
   left: 5rem;
 }
 
 .btn-playNow {
   padding: 8px 1.8rem;
-  background-color: blue;
+  background-color: var(--primary-color);
   margin: 0 0 0.6rem 4rem;
   border-radius: 1.5rem;
   border: none;
@@ -53,11 +53,11 @@
 
 .btn-playNow a {
   text-decoration: none;
-  color: white;
+  color: var(--white-color);
 }
 
 .btn-playNow:hover {
-  background-color: darkblue;
+  background-color: var(--darkBlue-color);
 }
 
 /****** mobile version  *****/
