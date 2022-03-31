@@ -8,12 +8,7 @@ export default function Home() {
       <h1 className="welcome-heading">QuizzWizz</h1>
 
       <div className="img-container">
-        <img
-          className="cover-img"
-          src="/assets/images/bg5.jpg"
-          alt="cover"
-          srcSet=""
-        />
+        <img className="cover-img" src="/assets/images/bg5.jpg" alt="cover" />
         <h2 className="welcome-question">
           Are you smart enough to take our Quiz?
         </h2>

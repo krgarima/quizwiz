@@ -1,11 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home/Home";
-import Quiz from "./Pages/Quiz/Quiz";
-import Result from "./Pages/Result/Result";
-import Rules from "./Pages/Rules/Rules";
-import NavBar from "./Components/Navbar/Navbar";
-import Footer from "./Components/Footer/Footer";
+import { Home, Quiz, Result, Rules, NavBar, Footer } from "./index";
 
 function App() {
   return (
