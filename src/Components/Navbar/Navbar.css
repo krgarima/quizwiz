@@ -1,14 +1,14 @@
 .navbar {
   height: 10vh;
   width: 100vw;
-  background-color: black;
-  color: white;
+  background-color: var(--black-color);
+  color: var(--white-color);
   display: flex;
   align-items: center;
   position: fixed;
   font-size: 1.3rem;
   z-index: 10;
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid var(--primary-color);
 }
 
 .navIcons {
@@ -22,7 +22,7 @@
 }
 
 .log a {
-  color: black;
+  color: var(--black-color);
   text-decoration: none;
   padding: 8px 1rem;
   font-size: 1rem;
@@ -32,7 +32,7 @@
   font-style: italic;
   font-weight: 600;
   text-decoration: none;
-  color: white;
+  color: var(--white-color);
   margin-left: 1rem;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .fa-heart {
-  color: white;
+  color: var(--white-color);
 }
 
 .fa-search {

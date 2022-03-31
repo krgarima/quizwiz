@@ -11,3 +11,18 @@ body {
 .main-container {
   min-height: 93vh;
 }
+
+/********** Colors ***********/
+
+:root {
+  --primary-color: blue;
+  --background-color: rgb(255, 252, 234);
+  --background2-color: rgb(243, 236, 236);
+  --black-color: black;
+  --white-color: white;
+  --lawngreen-color: lawngreen;
+  --red-color: red;
+  --darkBlue-color: darkblue;
+  --darkGray-color: darkgray;
+  --background2-color: rgb(243, 236, 236);
+}

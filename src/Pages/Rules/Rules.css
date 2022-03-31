@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgb(255, 252, 234);
+  background-color: var(--background-color);
 }
 
 .rules-heading {
@@ -17,9 +17,9 @@
 .rules {
   font-size: 1.2rem;
   width: 55%;
-  border: 1.5px solid black;
+  border: 1.5px solid var(--black-color);
   padding: 1rem;
-  background-color: rgb(243, 236, 236);
+  background-color: var(--background2-color);
   border-radius: 1.2rem;
 }
 
@@ -28,22 +28,22 @@
   font-size: 1.2rem;
   padding: 6px 4rem;
   border-radius: 1.5rem;
-  background-color: blue;
+  background-color: var(--primary-color);
 
   /* border: 2px solid blue; */
 }
 
 .btn-toQuizPage:hover {
-  background-color: darkblue;
+  background-color: var(--darkBlue-color);
 }
 
 .btn-toQuizPage a {
-  color: white;
+  color: var(--white-color);
   text-decoration: none;
 }
 
 .btn-toQuizPage a:hover {
-  color: white;
+  color: var(--white-color);
 }
 
 /******* Name container *****/
@@ -52,9 +52,9 @@
   height: 35vh;
   width: 40vw;
   font-size: 1.5rem;
-  border: 1px solid black;
+  border: 1px solid var(--black-color);
   position: absolute;
-  background-color: rgb(243, 236, 236);
+  background-color: var(--background2-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,13 +67,13 @@
   font-size: 1.2rem;
   padding: 6px 4rem;
   border-radius: 1.5rem;
-  background-color: blue;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--white-color);
   cursor: pointer;
 }
 
 .submit:hover {
-  background-color: darkblue;
+  background-color: var(--darkBlue-color);
 }
 
 #userName {

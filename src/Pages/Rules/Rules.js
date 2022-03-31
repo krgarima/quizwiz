@@ -4,8 +4,9 @@ import { NameContext } from "../../Context/name-context";
 import "./Rules.css";
 
 export default function Rules() {
-  const { setName } = useContext(NameContext);
+  const { name, setName } = useContext(NameContext);
   const [submitted, setSubmitted] = useState(false);
+
   return (
     <div className="rules-container">
       <h1 className="rules-heading">QUIZ RULES</h1>
@@ -34,9 +35,13 @@ export default function Rules() {
           <input
             type="text"
             id="userName"
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
           />
+
           <button
+            disabled={name.length === 0}
             className="submit"
             onClick={(e) => {
               e.preventDefault();
