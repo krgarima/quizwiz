@@ -10,12 +10,15 @@ import Result from "./Pages/Result/Result";
 import Rules from "./Pages/Rules/Rules";
 import NavBar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
+import { NameContextProvider } from "./Context/name-context";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <CategoryContextProvider>
-        <App />
+        <NameContextProvider>
+          <App />
+        </NameContextProvider>
       </CategoryContextProvider>
     </BrowserRouter>
   </React.StrictMode>,
