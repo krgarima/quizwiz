@@ -7,7 +7,7 @@ import "./Result.css";
 
 export default function Result() {
   const { score, setScore } = useContext(ScoreContext);
-  const { name } = useContext(NameContext);
+  const { name, setName } = useContext(NameContext);
   const { result, resultDispatch } = useContext(ResultContext);
   const [scoreDisplay, setScoreDisplay] = useState(true);
 
@@ -33,7 +33,6 @@ export default function Result() {
             className="review-results"
             onClick={() => {
               setScoreDisplay(false);
-              setScore(0);
             }}
           >
             Review results
@@ -84,7 +83,8 @@ export default function Result() {
             <button
               className="btn-playAgain"
               onClick={() => {
-                setScore("");
+                setScore(0);
+                setName([]);
                 resultDispatch({
                   type: "REMOVED",
                   payload: {},
@@ -96,7 +96,8 @@ export default function Result() {
             <button
               className="btn-leaderboard"
               onClick={() => {
-                setScore("");
+                setScore(0);
+                setName([]);
               }}
             >
               <Link to="/">Leaderboard</Link>

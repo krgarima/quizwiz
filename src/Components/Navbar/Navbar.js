@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/auth-context";
 
 export default function NavBar() {
+  const { logged } = useContext(AuthContext);
   return (
     <div className="navbar space-between">
       <span className="left space-between">
         <h3 className="third-heading company-logo">
-          <Link to="/">Quizzy</Link>
+          <Link to="/">Quizwiz</Link>
         </h3>
         <i className="fas fa-search"></i>
       </span>
@@ -19,7 +21,11 @@ export default function NavBar() {
         </div>
 
         <button className="log">
-          <Link to="/">Log In</Link>
+          {!logged ? (
+            <Link to="/login">Log In</Link>
+          ) : (
+            <Link to="/login">Log Out</Link>
+          )}
         </button>
 
         <button className="log">

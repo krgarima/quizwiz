@@ -11,6 +11,7 @@
 
 .welcome-heading {
   font-size: 2rem;
+  margin: 2rem 0;
 }
 
 .img-container {
@@ -27,6 +28,7 @@
 .welcome-msg {
   font-size: 1.5rem;
   color: var(--red-color);
+  margin: 2.5rem 0;
 }
 
 .welcome-question {

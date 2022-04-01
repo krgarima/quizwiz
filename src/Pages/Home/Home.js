@@ -5,7 +5,7 @@ import "./Home.css";
 export default function Home() {
   return (
     <div className="home-container">
-      <h1 className="welcome-heading">QuizzWizz</h1>
+      <h1 className="welcome-heading">QuizzWiz</h1>
 
       <div className="img-container">
         <img className="cover-img" src="/assets/images/bg5.jpg" alt="cover" />

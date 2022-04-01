@@ -9,11 +9,13 @@ import Result from "./Pages/Result/Result";
 import Rules from "./Pages/Rules/Rules";
 import NavBar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
+import Login from "./Pages/Login/Login";
 import { CategoryContextProvider } from "./Context/category-context";
 import { ScoreContextProvider } from "./Context/totalScore-context";
 import { DataContextProvider } from "./Context/data-context";
 import { NameContextProvider } from "./Context/name-context";
 import { ResultContextProvider } from "./Context/result-context";
+import { AuthContextProvider } from "./Context/auth-context";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,7 +25,9 @@ ReactDOM.render(
           <ScoreContextProvider>
             <DataContextProvider>
               <NameContextProvider>
-                <App />
+                <AuthContextProvider>
+                  <App />
+                </AuthContextProvider>
               </NameContextProvider>
             </DataContextProvider>
           </ScoreContextProvider>
@@ -34,4 +38,4 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-export { Home, Quiz, Result, Rules, NavBar, Footer };
+export { Home, Quiz, Result, Rules, NavBar, Footer, Login };
