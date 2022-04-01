@@ -168,3 +168,15 @@
     padding: 5px 3rem;
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    height: 100vh;
+  }
+  .bg-image {
+    min-height: 100vh;
+  }
+  .quiz-container {
+    height: 82vh;
+  }
+}
