@@ -41,7 +41,10 @@ export default function Login() {
             id="userNm"
             placeholder="Enter your username"
             value={userName}
-            onChange={(e) => setUserName(e.target.value)}
+            onChange={(e) => {
+              setUserName(e.target.value);
+              setError(false);
+            }}
           />
           <br />
           <label htmlFor="userPswd" className="userPswd">
@@ -53,7 +56,10 @@ export default function Login() {
             id="userPswd"
             placeholder="Enter your password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              setError(false);
+            }}
           />
           <br />
           <div className="check">
@@ -85,7 +91,7 @@ export default function Login() {
 
           {error && (
             <p className="error-auth">
-              Error: Enter a valid Username or Password!
+              Error: Enter valid Username and Password!
             </p>
           )}
         </div>
