@@ -25,7 +25,7 @@ export default function Card() {
             <p>10 Questions</p>
           </div>
           <button className="btn-playNow" onClick={() => setCategory(cat.code)}>
-            <Link to="/rules">Play now</Link>
+            <Link to="/login">Play now</Link>
           </button>
         </div>
       ))}

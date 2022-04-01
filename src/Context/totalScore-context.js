@@ -3,7 +3,7 @@ import React, { useState, createContext } from "react";
 const ScoreContext = createContext();
 
 const ScoreContextProvider = ({ children }) => {
-  const [score, setScore] = useState([]);
+  const [score, setScore] = useState(0);
 
   return (
     <div>

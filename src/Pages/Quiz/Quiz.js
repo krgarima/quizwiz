@@ -9,12 +9,11 @@ import "./Quiz.css";
 
 export default function Quiz() {
   const { category } = useContext(CategoryContext);
-  const { setScore } = useContext(ScoreContext);
+  const { score, setScore } = useContext(ScoreContext);
   const { data } = useContext(DataContext);
-  const { result, resultDispatch } = useContext(ResultContext);
+  const { resultDispatch } = useContext(ResultContext);
   const [number, setNumber] = useState(0);
   const [selected, setSelected] = useState();
-  const [totalScore, setTotalScore] = useState(0);
 
   const navigate = useNavigate();
 
@@ -43,7 +42,6 @@ export default function Quiz() {
 
   return (
     <div className="container">
-      {console.log(result)}
       <img
         className="bg-image"
         src="/assets/images/bg1.jpg"
@@ -57,7 +55,7 @@ export default function Quiz() {
           <>
             <div className="ques-score space-between">
               <span>Question: {number + 1}/10</span>
-              <span>Score: {totalScore}</span>
+              <span>Score: {score}</span>
             </div>
             <h2 key={data.length} className="question-heading">
               {data[number].question.replace(/&quot;/g, '"')}
@@ -77,7 +75,7 @@ export default function Quiz() {
                       onClick={() => {
                         setSelected(currentOption);
                         if (currentOption === data[number].correct_answer) {
-                          setTotalScore((score) => score + 1);
+                          setScore((currentScore) => currentScore + 1);
                         }
                       }}
                     >
@@ -88,17 +86,14 @@ export default function Quiz() {
             </div>
 
             <div className="space-between">
-              <button className="btn-quit" onClick={() => setScore(totalScore)}>
+              <button className="btn-quit">
                 <Link to="/result">Quit</Link>
               </button>
               <button className="btn-next" onClick={handleNext}>
                 {number === 9 ? "End Quiz" : "Next"}
               </button>
             </div>
-            <button
-              className="show-results"
-              onClick={() => setScore(totalScore)}
-            >
+            <button className="show-results">
               <Link to="/result">Show the results</Link>
             </button>
           </>

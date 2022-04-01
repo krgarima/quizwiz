@@ -7,7 +7,7 @@ export default function NavBar() {
     <div className="navbar space-between">
       <span className="left space-between">
         <h3 className="third-heading company-logo">
-          <Link to="/">Quizzy</Link>
+          <Link to="/">Quizwiz</Link>
         </h3>
         <i className="fas fa-search"></i>
       </span>
@@ -19,7 +19,7 @@ export default function NavBar() {
         </div>
 
         <button className="log">
-          <Link to="/">Log In</Link>
+          <Link to="/login">Log In</Link>
         </button>
 
         <button className="log">
