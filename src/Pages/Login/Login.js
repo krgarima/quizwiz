@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/auth-context";
 
 export default function Login() {
-  const { userName, setUserName, password, setPassword } =
+  const { userName, setUserName, password, setPassword, setLogged } =
     useContext(AuthContext);
   const [error, setError] = useState(false);
 
@@ -13,8 +13,10 @@ export default function Login() {
 
   const handleCheck = (e) => {
     e.preventDefault();
-    if (userName === "garry" && password === "123") navigate("/rules");
-    else {
+    if (userName === "garry" && password === "123") {
+      setLogged(true);
+      navigate("/rules");
+    } else {
       setError(true);
       setUserName("");
       setPassword("");
