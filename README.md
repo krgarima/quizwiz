@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# An application for playing Quiz
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a fun Quiz app containing various listed categories
 
-## Available Scripts
+## Authors
 
-In the project directory, you can run:
+- [@Garima](https://github.com/krgarima/)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Functionalities
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. Home page - 
 
-### `npm test`
+- Quiz categories listed for user
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Rules page - 
 
-### `npm run build`
+a. Input user name -
+- user is required to submit his name
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+b. Rules -
+- set of quiz rules
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3. Quiz taking page - 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 10 Questions with 4 options
+- Question number and score on top of the screen
+- Quiz category displayed on top
+- Quit button
+- Next button
+- Show the results button
 
-### `npm run eject`
+### 4. Results page - 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+a. Score card
+- user name
+- Number of correct, incorrect answers, unanswered questions
+- review button
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+b. Review quiz
+- list of correct questions/answers
+- list of incorrect questions/answers
+- Play again button
+- Move to leaderboard button
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 5. Login page - 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Input Username
+- Input password
+- Remember me option
+- Forgot password option
+- Login button
+- Dummy login button
+- Create a New Account button
 
-## Learn More
+6. Log out
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Logs user out
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Tech Stack
 
-### Code Splitting
+- ReactJS (useState, useContext, useEffect, useReducer Hooks, React router, Local storage)
+- CSS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🚀 About Me
+I'm a Advanced Front-end developer. I have working knowledge of HTML, CSS, Javascript, React, Java and MySQL. 
 
-### Analyzing the Bundle Size
+- [Profile](https://github.com/krgarima/)
+## 🔗 Feedback
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### If you have any feedback/suggestions, reach out to me at
 
-### Making a Progressive Web App
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/GarimaK29063577)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://twitter.com/GarimaK29063577)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Preview
 
-### Deployment
+https://quizwiz.netlify.app/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
