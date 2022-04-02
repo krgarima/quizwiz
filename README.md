@@ -16,10 +16,10 @@ This is a fun Quiz app containing various listed categories
 ### 2. Rules page - 
 
 a. Input user name -
-- user is required to submit his name
+- User is required to submit his name
 
 b. Rules -
-- set of quiz rules
+- Set of quiz rules
 
 ### 3. Quiz taking page - 
 
@@ -33,13 +33,13 @@ b. Rules -
 ### 4. Results page - 
 
 a. Score card
-- user name
+- User name
 - Number of correct, incorrect answers, unanswered questions
-- review button
+- Review button
 
 b. Review quiz
-- list of correct questions/answers
-- list of incorrect questions/answers
+- List of correct questions/answers
+- List of incorrect questions/answers
 - Play again button
 - Move to leaderboard button
 
@@ -53,7 +53,7 @@ b. Review quiz
 - Dummy login button
 - Create a New Account button
 
-6. Log out
+### 6. Log out
 
 - Logs user out
 
