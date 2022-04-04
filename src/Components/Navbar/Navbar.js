@@ -6,7 +6,7 @@ import "./Navbar.css";
 
 export default function NavBar() {
   const { logged } = useContext(AuthContext);
-  const { setSearchList, successMsg } = useContext(SearchContext);
+  const { setSearchList } = useContext(SearchContext);
   const [search, setSearch] = useState("");
 
   const handleChange = (e) => {
@@ -28,7 +28,6 @@ export default function NavBar() {
 
   return (
     <div className="navbar">
-      {console.log(successMsg)}
       <h3 className="third-heading company-logo">
         <Link to="/">Quizwiz</Link>
       </h3>
