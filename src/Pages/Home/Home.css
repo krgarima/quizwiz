@@ -1,6 +1,6 @@
 .home-container {
   padding-top: 10vh;
-  min-height: 150vh;
+  min-height: 100vh;
   width: 98.9vw;
   display: flex;
   flex-direction: column;
@@ -40,12 +40,13 @@
   -webkit-text-stroke: 2px var(--primary-color);
 }
 
+.hide {
+  display: none;
+}
+
 /****** mobile version  *****/
 
 @media only screen and (max-width: 800px) {
-  .home-container {
-    min-height: 220vh;
-  }
   .cover-img {
     width: 90%;
   }

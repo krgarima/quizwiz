@@ -1,9 +1,11 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { CategoryContext } from "../../Context/category-context";
-import { ScoreContext } from "../../Context/totalScore-context";
-import { DataContext } from "../../Context/data-context";
-import { ResultContext } from "../../Context/result-context";
+import {
+  CategoryContext,
+  ScoreContext,
+  DataContext,
+  ResultContext,
+} from "../../Context/index";
 import { useNavigate } from "react-router-dom";
 import "./Quiz.css";
 
