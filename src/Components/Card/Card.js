@@ -1,14 +1,15 @@
 import React, { useContext } from "react";
-import { CategoryContext } from "../../Context/category-context";
+import { CategoryContext, SearchContext } from "../../Context/index";
 import { Link } from "react-router-dom";
 import { categories } from "../../backend/db/categories";
 import "./Card.css";
 
 export default function Card() {
   const { setCategory } = useContext(CategoryContext);
+  const { searchList } = useContext(SearchContext);
   return (
     <div className="card-container">
-      {categories.map((cat) => (
+      {(searchList.length > 0 ? searchList : categories).map((cat) => (
         <div key={Math.random()} className="card">
           <div className="background-Image">
             <img

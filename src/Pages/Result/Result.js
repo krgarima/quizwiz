@@ -1,8 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ScoreContext } from "../../Context/totalScore-context";
-import { NameContext } from "../../Context/name-context";
-import { ResultContext } from "../../Context/result-context";
+import { ScoreContext, NameContext, ResultContext } from "../../Context/index";
 import "./Result.css";
 
 export default function Result() {
