@@ -53,9 +53,21 @@ b. Review quiz
 - Dummy login button
 - Create a New Account button
 
-### 6. Log out
+### 6. Log out button
 
 - Logs user out
+
+### 7. Search
+
+- User can search for a quiz from the list
+
+### 8. Quit Quiz
+
+- User can quit a quiz while I'm playing it.
+
+### 9. Loading & Alerts
+
+- User can see loading spinners when the data in loading
 
 ## Tech Stack
 
