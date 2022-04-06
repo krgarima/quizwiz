@@ -38,8 +38,8 @@ body {
 
 :root {
   --primary-color: blue;
-  --background-color: rgb(255, 252, 234);
-  --background2-color: rgb(243, 236, 236);
+  --background-color: rgb(250, 255, 95);
+  --background2-color: rgb(197, 242, 255);
   --black-color: black;
   --white-color: white;
   --green-color: green;
@@ -48,5 +48,4 @@ body {
   --red-color: red;
   --darkBlue-color: darkblue;
   --darkGray-color: darkgray;
-  --background2-color: rgb(243, 236, 236);
 }

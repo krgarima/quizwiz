@@ -1,12 +1,25 @@
 import React, { useState, createContext, useEffect, useContext } from "react";
 import axios from "axios";
 import { CategoryContext } from "./category-context";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const DataContext = createContext();
 
 const DataContextProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const { category } = useContext(CategoryContext);
+
+  const notify = (msg) =>
+    toast.error(msg, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
 
   useEffect(() => {
     (async function fetchQuestions() {
@@ -16,7 +29,7 @@ const DataContextProvider = ({ children }) => {
         );
         setData(data.results);
       } catch (error) {
-        console.log(error);
+        notify(error);
       }
     })();
   }, [category]);
@@ -26,6 +39,7 @@ const DataContextProvider = ({ children }) => {
       <DataContext.Provider value={{ data, setData }}>
         {children}
       </DataContext.Provider>
+      <ToastContainer />
     </div>
   );
 };

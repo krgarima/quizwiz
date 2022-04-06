@@ -29,7 +29,7 @@ export default function NavBar() {
   return (
     <div className="navbar">
       <h3 className="third-heading company-logo">
-        <Link to="/">Quizwiz</Link>
+        <Link to="/">QuizWiz</Link>
       </h3>
 
       <div>

@@ -7,7 +7,7 @@ export default function Home() {
   const { searchList } = useContext(SearchContext);
   return (
     <div className="home-container">
-      <h1 className="welcome-heading">QuizzWiz</h1>
+      <h1 className="welcome-heading">QuizWiz</h1>
 
       {searchList.length === 0 && (
         <div className="img-container">

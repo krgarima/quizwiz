@@ -35,6 +35,10 @@
   justify-content: space-evenly;
 }
 
+.login-contents input {
+  padding: 0rem 6px;
+}
+
 .forgotPswd {
   color: var(--darkBlue-color);
   margin-left: 1.2rem;
