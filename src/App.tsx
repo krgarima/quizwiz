@@ -6,10 +6,11 @@ import { AuthContext } from "./Context";
 
 const App: React.FC = () => {
   const { logged, setLogged } = useContext<any>(AuthContext);
+  let encodedToken = localStorage.getItem("token");
 
   useEffect(() => {
-    setLogged(true);
-  }, [setLogged]);
+    if (encodedToken) setLogged(true);
+  }, [encodedToken, setLogged]);
 
   return (
     <div className="App">
@@ -18,9 +19,12 @@ const App: React.FC = () => {
       <main className="main-container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/quiz" element={logged ? <Quiz /> : <Login />} />
-          <Route path="/result" element={logged ? <Result /> : <Login />} />
-          <Route path="/rules" element={logged ? <Rules /> : <Login />} />
+          <Route path="/quiz" element={encodedToken ? <Quiz /> : <Login />} />
+          <Route
+            path="/result"
+            element={encodedToken ? <Result /> : <Login />}
+          />
+          <Route path="/rules" element={encodedToken ? <Rules /> : <Login />} />
           <Route path="/login" element={<Login />} />
           <Route
             path="*"
