@@ -4,13 +4,27 @@ import { CategoryContext } from "./category-context";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const DataContext = createContext();
+export interface DataObjInterface {
+  category: string;
+  correct_answer: string;
+  difficulty: string;
+  incorrect_answers: string[];
+  question: string;
+  type: string;
+}
 
-const DataContextProvider = ({ children }) => {
-  const [data, setData] = useState([]);
-  const { category } = useContext(CategoryContext);
+export interface DataInterface {
+  data: DataObjInterface[];
+  setData: React.Dispatch<React.SetStateAction<DataObjInterface[]>>;
+}
 
-  const notify = (msg) =>
+const DataContext = createContext({} as DataInterface);
+
+const DataContextProvider = ({ children }: any) => {
+  const [data, setData] = useState<DataObjInterface[]>([]);
+  const { category } = useContext<any>(CategoryContext);
+
+  const notify = (msg: string) =>
     toast.error(msg, {
       position: "top-right",
       autoClose: 5000,
@@ -29,7 +43,7 @@ const DataContextProvider = ({ children }) => {
         );
         setData(data.results);
       } catch (error) {
-        notify(error);
+        notify("Please refresh! Some error has occured.");
       }
     })();
   }, [category]);

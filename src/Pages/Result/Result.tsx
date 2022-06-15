@@ -3,7 +3,17 @@ import { Link } from "react-router-dom";
 import { ScoreContext, NameContext, ResultContext } from "../../Context/index";
 import "./Result.css";
 
-export default function Result() {
+export type AnswersType = {
+  category: string;
+  correct_answer: string;
+  difficulty: string;
+  incorrect_answers: string[];
+  question: string;
+  type: string;
+  selected: string;
+};
+
+const Result = () => {
   const { score, setScore } = useContext(ScoreContext);
   const { name, setName } = useContext(NameContext);
   const { result, resultDispatch } = useContext(ResultContext);
@@ -21,7 +31,7 @@ export default function Result() {
       {scoreDisplay ? (
         <div className="userResult">
           <h1>Score Card</h1>
-          <p>Name: {name}</p>
+          <p>Name: {name || localStorage.getItem("username")} </p>
           <p>Your score: {score}</p>
           <p>Correct Answers: {score}</p>
           <p>Wrong Answers: {result.length - score}</p>
@@ -49,9 +59,11 @@ export default function Result() {
           <div className="results-answers">
             <ol>
               {result
-                .filter((item) => item.correct_answer === item.selected)
-                .map((correctAns) => (
-                  <li key={Math.random(1)}>
+                .filter(
+                  (item: AnswersType) => item.correct_answer === item.selected
+                )
+                .map((correctAns: AnswersType) => (
+                  <li key={Math.random()}>
                     <h4 className="questions">
                       Question: {correctAns.question}
                     </h4>
@@ -65,9 +77,11 @@ export default function Result() {
           <div className="results-answers">
             <ol>
               {result
-                .filter((item) => item.correct_answer !== item.selected)
-                .map((correctAns) => (
-                  <li key={Math.random(1)}>
+                .filter(
+                  (item: AnswersType) => item.correct_answer !== item.selected
+                )
+                .map((correctAns: AnswersType) => (
+                  <li key={Math.random()}>
                     <h4 className="questions">
                       Question: {correctAns.question}
                     </h4>
@@ -82,7 +96,7 @@ export default function Result() {
               className="btn-playAgain"
               onClick={() => {
                 setScore(0);
-                setName([]);
+                setName("");
                 resultDispatch({
                   type: "REMOVED",
                   payload: {},
@@ -91,18 +105,20 @@ export default function Result() {
             >
               <Link to="/">Play again</Link>
             </button>
-            <button
+            {/* <button
               className="btn-leaderboard"
               onClick={() => {
                 setScore(0);
-                setName([]);
+                setName("");
               }}
             >
               <Link to="/">Leaderboard</Link>
-            </button>
+            </button> */}
           </div>
         </div>
       )}
     </div>
   );
-}
+};
+
+export default Result;

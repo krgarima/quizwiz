@@ -1,21 +1,23 @@
 import React, { useContext, useState } from "react";
-import "./Login.css";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/auth-context";
+import "./Login.css";
 
-export default function Login() {
-  const { userName, setUserName, password, setPassword, setLogged } =
+export const Login = () => {
+  const { userName, setUserName, password, setPassword, setLogged }: any =
     useContext(AuthContext);
   const [error, setError] = useState(false);
-
   const navigate = useNavigate();
 
-  const handleCheck = (e) => {
+  const handleCheck = (e: React.FormEvent) => {
     e.preventDefault();
-    if (userName === "garry" && password === "123") {
+    if (
+      (userName === "garry" && password === "123") ||
+      localStorage.getItem("123hdsa45dywe37382937c272")
+    ) {
+      localStorage.setItem("token", "123hdsa45dywe37382937c272");
       setLogged(true);
-      navigate("/rules");
+      navigate("/");
     } else {
       setError(true);
       setUserName("");
@@ -23,7 +25,7 @@ export default function Login() {
     }
   };
 
-  const handleDummyData = (e) => {
+  const handleDummyData = (e: React.FormEvent) => {
     e.preventDefault();
     setUserName("garry");
     setPassword("123");
@@ -100,4 +102,6 @@ export default function Login() {
       </form>
     </div>
   );
-}
+};
+
+export default Login;

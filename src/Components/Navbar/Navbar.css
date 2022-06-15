@@ -14,16 +14,21 @@
 }
 
 .navIcons {
-  width: 20rem;
+  width: 10rem;
   display: flex;
   justify-content: space-evenly;
+}
+
+.log {
+  color: var(--black-color);
+  text-decoration: none;
+  padding: 8px 1rem;
+  font-size: 1rem;
 }
 
 .log a {
   color: var(--black-color);
   text-decoration: none;
-  padding: 8px 1rem;
-  font-size: 1rem;
 }
 
 .company-logo a {
