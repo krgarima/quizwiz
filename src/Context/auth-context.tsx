@@ -7,6 +7,8 @@ export interface AuthInterface {
   setPassword: React.Dispatch<React.SetStateAction<string>>;
   logged: boolean;
   setLogged: React.Dispatch<React.SetStateAction<boolean>>;
+  rememberPassword: boolean;
+  setRememberPassword: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const AuthContext = createContext({} as AuthInterface);
@@ -15,6 +17,7 @@ const AuthContextProvider = ({ children }: any) => {
   const [userName, setUserName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [logged, setLogged] = useState<boolean>(false);
+  const [rememberPassword, setRememberPassword] = useState<boolean>(false);
 
   return (
     <div>
@@ -26,6 +29,8 @@ const AuthContextProvider = ({ children }: any) => {
           setPassword,
           logged,
           setLogged,
+          rememberPassword,
+          setRememberPassword,
         }}
       >
         {children}

@@ -4,19 +4,31 @@ import { AuthContext } from "../../Context/auth-context";
 import "./Login.css";
 
 export const Login = () => {
-  const { userName, setUserName, password, setPassword, setLogged }: any =
-    useContext(AuthContext);
+  const {
+    userName,
+    setUserName,
+    password,
+    setPassword,
+    setLogged,
+    rememberPassword,
+    setRememberPassword,
+  }: any = useContext(AuthContext);
   const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   const handleCheck = (e: React.FormEvent) => {
     e.preventDefault();
     if (
-      (userName === "garry" && password === "123") ||
+      (userName === "garry734" &&
+        password === "^&734wurshfskjh7438473429w&%$") ||
       localStorage.getItem("123hdsa45dywe37382937c272")
     ) {
       localStorage.setItem("token", "123hdsa45dywe37382937c272");
       setLogged(true);
+      if (!rememberPassword) {
+        setUserName("");
+        setPassword("");
+      }
       navigate("/");
     } else {
       setError(true);
@@ -27,8 +39,8 @@ export const Login = () => {
 
   const handleDummyData = (e: React.FormEvent) => {
     e.preventDefault();
-    setUserName("garry");
-    setPassword("123");
+    setUserName("garry734");
+    setPassword("^&734wurshfskjh7438473429w&%$");
   };
 
   return (
@@ -72,11 +84,11 @@ export const Login = () => {
               name="userAgreement"
               className="userAgreement"
               id="userAgreement"
+              readOnly
+              checked={rememberPassword ? true : false}
+              onClick={() => setRememberPassword(!rememberPassword)}
             />
             <label htmlFor="userAgreement">Remember me</label>
-            <Link to="/" rel="noopener noreferrer" className="forgotPswd">
-              Forgot your password?
-            </Link>
           </div>
           <br />
           <button
@@ -88,9 +100,6 @@ export const Login = () => {
           <br />
           <button className="login-btns dummy-btn" onClick={handleDummyData}>
             Add Dummy Username and Password
-          </button>
-          <button className="login-btns toSignUpPage-btn">
-            <Link to="/">Create New Account &gt;</Link>
           </button>
 
           {error && (
