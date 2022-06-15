@@ -5,7 +5,7 @@ import { Home, Quiz, Result, Rules, NavBar, Footer, Login } from "./index";
 import { AuthContext } from "./Context";
 
 const App: React.FC = () => {
-  const { logged, setLogged } = useContext<any>(AuthContext);
+  const { setLogged } = useContext<any>(AuthContext);
   let encodedToken = localStorage.getItem("token");
 
   useEffect(() => {
