@@ -3,7 +3,7 @@ import Card from "../../Components/Card/Card";
 import { SearchContext } from "../../Context";
 import "./Home.css";
 
-export default function Home() {
+const Home = () => {
   const { searchList } = useContext(SearchContext);
   return (
     <div className="home-container">
@@ -34,4 +34,6 @@ export default function Home() {
       <Card />
     </div>
   );
-}
+};
+
+export default Home;

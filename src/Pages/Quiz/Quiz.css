@@ -12,7 +12,7 @@
   top: 0;
   min-height: 88vh;
   width: 98.9vw;
-  z-index: 0;
+  z-index: -1;
   overflow: hidden;
   object-fit: fill;
 }
@@ -96,7 +96,7 @@
 
 .show-results {
   font-size: 1.2rem;
-  width: 26rem;
+  width: 30rem;
   padding: 3px 0;
   border-radius: 1.5rem;
   cursor: pointer;

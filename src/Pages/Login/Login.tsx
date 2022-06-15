@@ -1,21 +1,35 @@
 import React, { useContext, useState } from "react";
-import "./Login.css";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/auth-context";
+import "./Login.css";
 
-export default function Login() {
-  const { userName, setUserName, password, setPassword, setLogged } =
-    useContext(AuthContext);
+export const Login = () => {
+  const {
+    userName,
+    setUserName,
+    password,
+    setPassword,
+    setLogged,
+    rememberPassword,
+    setRememberPassword,
+  }: any = useContext(AuthContext);
   const [error, setError] = useState(false);
-
   const navigate = useNavigate();
 
-  const handleCheck = (e) => {
+  const handleCheck = (e: React.FormEvent) => {
     e.preventDefault();
-    if (userName === "garry" && password === "123") {
+    if (
+      (userName === "garry734" &&
+        password === "^&734wurshfskjh7438473429w&%$") ||
+      localStorage.getItem("123hdsa45dywe37382937c272")
+    ) {
+      localStorage.setItem("token", "123hdsa45dywe37382937c272");
       setLogged(true);
-      navigate("/rules");
+      if (!rememberPassword) {
+        setUserName("");
+        setPassword("");
+      }
+      navigate("/");
     } else {
       setError(true);
       setUserName("");
@@ -23,10 +37,10 @@ export default function Login() {
     }
   };
 
-  const handleDummyData = (e) => {
+  const handleDummyData = (e: React.FormEvent) => {
     e.preventDefault();
-    setUserName("garry");
-    setPassword("123");
+    setUserName("garry734");
+    setPassword("^&734wurshfskjh7438473429w&%$");
   };
 
   return (
@@ -70,11 +84,11 @@ export default function Login() {
               name="userAgreement"
               className="userAgreement"
               id="userAgreement"
+              readOnly
+              checked={rememberPassword ? true : false}
+              onClick={() => setRememberPassword(!rememberPassword)}
             />
             <label htmlFor="userAgreement">Remember me</label>
-            <Link to="/" rel="noopener noreferrer" className="forgotPswd">
-              Forgot your password?
-            </Link>
           </div>
           <br />
           <button
@@ -87,9 +101,6 @@ export default function Login() {
           <button className="login-btns dummy-btn" onClick={handleDummyData}>
             Add Dummy Username and Password
           </button>
-          <button className="login-btns toSignUpPage-btn">
-            <Link to="/">Create New Account &gt;</Link>
-          </button>
 
           {error && (
             <p className="error-auth">
@@ -100,4 +111,6 @@ export default function Login() {
       </form>
     </div>
   );
-}
+};
+
+export default Login;

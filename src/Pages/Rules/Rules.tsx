@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { NameContext } from "../../Context/name-context";
 import "./Rules.css";
 
-export default function Rules() {
+const Rules = () => {
   const { name, setName } = useContext(NameContext);
   const [submitted, setSubmitted] = useState(false);
 
@@ -31,7 +31,7 @@ export default function Rules() {
         </div>
       ) : (
         <form className="name-container">
-          <label htmlFor="userName">Enter your name:</label>
+          <label htmlFor="userName">Enter your name</label>
           <input
             type="text"
             id="userName"
@@ -47,6 +47,7 @@ export default function Rules() {
             onClick={(e) => {
               e.preventDefault();
               setSubmitted(true);
+              localStorage.setItem("username", name);
             }}
           >
             Submit
@@ -58,4 +59,6 @@ export default function Rules() {
       </button>
     </div>
   );
-}
+};
+
+export default Rules;

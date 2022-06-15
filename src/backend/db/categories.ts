@@ -1,6 +1,13 @@
 import { v4 as uuid } from "uuid";
 
-export const categories = [
+export type CategoriesObjType = {
+  _id: string;
+  categoryName: string;
+  code: number;
+  description: string;
+};
+
+export const categories: CategoriesObjType[] = [
   {
     _id: uuid(),
     categoryName: "Anime",

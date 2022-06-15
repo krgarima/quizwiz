@@ -1,8 +1,16 @@
 import "./App.css";
+import { useContext, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Home, Quiz, Result, Rules, NavBar, Footer, Login } from "./index";
+import { AuthContext } from "./Context";
 
-function App() {
+const App: React.FC = () => {
+  const { logged, setLogged } = useContext<any>(AuthContext);
+
+  useEffect(() => {
+    setLogged(true);
+  }, [setLogged]);
+
   return (
     <div className="App">
       <NavBar />
@@ -10,9 +18,9 @@ function App() {
       <main className="main-container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/quiz" element={<Quiz />} />
-          <Route path="/result" element={<Result />} />
-          <Route path="/rules" element={<Rules />} />
+          <Route path="/quiz" element={logged ? <Quiz /> : <Login />} />
+          <Route path="/result" element={logged ? <Result /> : <Login />} />
+          <Route path="/rules" element={logged ? <Rules /> : <Login />} />
           <Route path="/login" element={<Login />} />
           <Route
             path="*"
@@ -36,6 +44,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;
