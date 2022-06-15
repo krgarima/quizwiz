@@ -3,9 +3,7 @@
   min-height: 93vh;
   width: 98.9vw;
   font-size: 1.2rem;
-
   position: relative;
-
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -21,6 +19,10 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.userResult h1 {
+  border-bottom: 3px solid var(--black-color);
 }
 
 .pass {
@@ -56,9 +58,14 @@
   width: 14rem;
   font-size: 1.2rem;
   padding: 1rem 4rem;
-  border-radius: 1.5rem;
+  border: none;
   background-color: var(--primary-color);
   cursor: pointer;
+}
+
+.btn-playAgain:hover,
+.btn-leaderboard:hover {
+  background-color: var(--darkBlue-color);
 }
 
 .btn-playAgain a,
@@ -75,18 +82,19 @@
   margin: 5vh 0;
 }
 
-.correct-answers {
+.answer-heading {
   margin: 5vh 0;
-  background-color: var(--lawngreen-color);
   padding: 5px 0;
-  border-radius: 1.5rem;
+  padding: 1rem;
+  border-bottom: 3px solid var(--black-color);
+}
+
+.correct-answers {
+  background-color: var(--lawngreen-color);
 }
 
 .wrong-answers {
-  margin: 5vh 0;
   background-color: var(--red-color);
-  padding: 5px 0;
-  border-radius: 1.5rem;
 }
 
 .questions {

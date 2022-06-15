@@ -49,6 +49,7 @@
   margin: 0 0 0.6rem 4rem;
   border-radius: 1.5rem;
   border: none;
+  cursor: pointer;
 }
 
 .btn-playNow a {
@@ -58,6 +59,7 @@
 
 .btn-playNow:hover {
   background-color: var(--darkBlue-color);
+  padding: 8px 1.7rem;
 }
 
 /****** mobile version  *****/

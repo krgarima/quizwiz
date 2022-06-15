@@ -11,7 +11,7 @@ export type actionType =
       payload: payloadType[] | any;
     }
   | {
-      type: "REMOVED";
+      type: "RESET";
       payload: [] | any;
     };
 
@@ -21,7 +21,7 @@ export const resultReducer = (state: [], action: actionType) => {
     case "ADDED": {
       return [...state, { ...current, selected }];
     }
-    case "REMOVED": {
+    case "RESET": {
       return [];
     }
     default:

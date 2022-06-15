@@ -31,7 +31,7 @@ const Rules = () => {
         </div>
       ) : (
         <form className="name-container">
-          <label htmlFor="userName">Enter your name:</label>
+          <label htmlFor="userName">Enter your name</label>
           <input
             type="text"
             id="userName"

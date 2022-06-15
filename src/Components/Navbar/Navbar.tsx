@@ -1,6 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext, SearchContext } from "../../Context/index";
+import {
+  AuthContext,
+  SearchContext,
+  ScoreContext,
+  ResultContext,
+} from "../../Context/index";
 import { categories } from "../../backend/db/categories";
 import "./Navbar.css";
 
@@ -8,8 +13,11 @@ export default function NavBar() {
   const { setSearchList } = useContext(SearchContext);
   const [search, setSearch] = useState("");
   const { setLogged } = useContext(AuthContext);
-  const navigate = useNavigate();
+  const { setScore } = useContext(ScoreContext);
+  const { resultDispatch } = useContext(ResultContext);
+
   let encodedToken = localStorage.getItem("token");
+  const navigate = useNavigate();
 
   useEffect(() => {
     setLogged(true);
@@ -37,7 +45,18 @@ export default function NavBar() {
   return (
     <div className="navbar">
       <h3 className="third-heading company-logo">
-        <Link to="/">QuizWiz</Link>
+        <Link
+          to="/"
+          onClick={() => {
+            setScore(0);
+            resultDispatch({
+              type: "RESET",
+              payload: {},
+            });
+          }}
+        >
+          QuizWiz
+        </Link>
       </h3>
 
       <div>

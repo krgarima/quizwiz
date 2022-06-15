@@ -26,11 +26,17 @@ const Result = () => {
     );
   }, [score, name]);
 
+  const decodeHtml = (html: string) => {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+  };
+
   return (
     <div className="result-container">
       {scoreDisplay ? (
         <div className="userResult">
-          <h1>Score Card</h1>
+          <h1>Result</h1>
           <p>Name: {name || localStorage.getItem("username")} </p>
           <p>Your score: {score}</p>
           <p>Correct Answers: {score}</p>
@@ -55,7 +61,9 @@ const Result = () => {
         <div className="review-container">
           <h1 className="review-heading">Review</h1>
 
-          <h2 className="correct-answers">Questions you answered correctly:</h2>
+          <h2 className="answer-heading correct-answers">
+            Questions you answered correctly:
+          </h2>
           <div className="results-answers">
             <ol>
               {result
@@ -65,15 +73,19 @@ const Result = () => {
                 .map((correctAns: AnswersType) => (
                   <li key={Math.random()}>
                     <h4 className="questions">
-                      Question: {correctAns.question}
+                      Question: {decodeHtml(correctAns.question)}
                     </h4>
-                    <p>You answered: {correctAns.selected}</p>
-                    <p>Correct answer: {correctAns.correct_answer}</p>
+                    <p>You answered: {decodeHtml(correctAns.selected)}</p>
+                    <p>
+                      Correct answer: {decodeHtml(correctAns.correct_answer)}
+                    </p>
                   </li>
                 ))}
             </ol>
           </div>
-          <h2 className="wrong-answers">Questions you answered wrongly:</h2>
+          <h2 className="answer-heading wrong-answers">
+            Questions you answered wrongly:
+          </h2>
           <div className="results-answers">
             <ol>
               {result
@@ -83,10 +95,12 @@ const Result = () => {
                 .map((correctAns: AnswersType) => (
                   <li key={Math.random()}>
                     <h4 className="questions">
-                      Question: {correctAns.question}
+                      Question: {decodeHtml(correctAns.question)}
                     </h4>
-                    <p>You answered: {correctAns.selected}</p>
-                    <p>Correct answer: {correctAns.correct_answer}</p>
+                    <p>You answered: {decodeHtml(correctAns.selected)}</p>
+                    <p>
+                      Correct answer: {decodeHtml(correctAns.correct_answer)}
+                    </p>
                   </li>
                 ))}
             </ol>
@@ -98,7 +112,7 @@ const Result = () => {
                 setScore(0);
                 setName("");
                 resultDispatch({
-                  type: "REMOVED",
+                  type: "RESET",
                   payload: {},
                 });
               }}
